@@ -11,14 +11,10 @@ task spec: [:test] do
   # alias for 'rake test'
 end
 
-def usage
-  problem = ENV['p'].to_i
-  raise "Please specify a problem to benchmark.\nUsage: rake bm p=1" if problem == 0
-  problem
-end
-
 task :solve do
-  problem = usage
+  problem = ENV['p'].to_i
+  raise "Please specify a problem to benchmark.\nUsage: rake solve p=1" if problem == 0
+
   if klass = ProjectEuler.find(problem)
     answer = nil
     time = Benchmark.realtime do
@@ -31,7 +27,9 @@ task :solve do
 end
 
 task :bm do
-  problem = usage
+  problem = ENV['p'].to_i
+  raise "Please specify a problem to benchmark.\nUsage: rake bm p=1" if problem == 0
+
   if klass = ProjectEuler.find(problem)
     klass.new.bm
   else
