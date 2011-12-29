@@ -9,8 +9,8 @@ module ProjectEuler
       end
 
       def bm n = 100
-        Benchmark.bm(7) do |x|
-          x.report(self.class.name + ':') do
+        Benchmark.bm(9) do |x|
+          x.report("Problem #{self.class.name.tr('Problem','')}:") do
             n.times { solution }
           end
         end
