@@ -1,15 +1,15 @@
 module ProjectEuler
   module Utils
     module Benchmarkable
-      def realtime
+      def time
         time = Benchmark.realtime do
           solution
         end
-        puts "#{self.class.name} - Time elapsed: #{time}"
+        puts "#{self.class.name}\t#{"%f" % time}"
       end
 
       def bm n = 1000
-        Benchmark.bm do |x|
+        Benchmark.bm(7) do |x|
           x.report(self.class.name) do
             n.times { solution }
           end
