@@ -2,10 +2,6 @@ require 'benchmark'
 require 'prime'
 require_relative 'project_euler/utils/benchmarkable'
 require_relative 'project_euler/utils/fibonacci'
-require_relative 'project_euler/problem'
-require_relative 'project_euler/problem_1.rb'
-require_relative 'project_euler/problem_2.rb'
-require_relative 'project_euler/problem_3.rb'
-require_relative 'project_euler/problem_4.rb'
-require_relative 'project_euler/problem_5.rb'
-require_relative 'project_euler/problem_6.rb'
+
+# require problems
+Dir.glob(File.dirname(__FILE__) + '/project_euler/problem*', &method(:require))
