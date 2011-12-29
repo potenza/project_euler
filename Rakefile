@@ -20,16 +20,11 @@ end
 task :solve do
   problem = usage
   if klass = ProjectEuler.find(problem)
-    puts "#{klass.name} Solution: #{klass.new.solution}"
-  else
-    puts "Problem #{problem} has not been solved"
-  end
-end
-
-task :time do
-  problem = usage
-  if klass = ProjectEuler.find(problem)
-    klass.new.time
+    answer = nil
+    time = Benchmark.realtime do
+      answer = klass.new.solution
+    end
+    puts "Problem #{problem} Solution: #{answer} (#{"%f" % time} seconds)"
   else
     puts "Problem #{problem} has not been solved"
   end

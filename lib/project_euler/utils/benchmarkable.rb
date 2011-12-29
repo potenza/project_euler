@@ -8,7 +8,7 @@ module ProjectEuler
         puts "#{self.class.name} Elapsed Time: #{"%f" % time}"
       end
 
-      def bm n = 1000
+      def bm n = 100
         Benchmark.bm(7) do |x|
           x.report(self.class.name + ':') do
             n.times { solution }
