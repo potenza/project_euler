@@ -3,7 +3,7 @@ module ProjectEuler
     class Fibonacci
       include Enumerable
 
-      def initialize(limit = 4_000_000)
+      def initialize limit = 4_000_000
         @a = 0
         @b = 1
         @limit = limit
