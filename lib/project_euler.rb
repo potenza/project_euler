@@ -1,5 +1,6 @@
 require 'benchmark'
 require 'prime'
+require 'strscan'
 require_relative 'project_euler/utils/benchmarkable'
 require_relative 'project_euler/utils/fibonacci'
 
