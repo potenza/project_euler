@@ -4,21 +4,13 @@ class Problem7 < ProjectEuler::Problem
   # value of n initially. Once the 10,001st prime is found, you can
   # lower the value of n to limit iterations.
   def solution n = 105_000
-    primes = [nil] # so you can say primes[10001] for the 10001st prime
-    tmp = []
-
-    (2..n).each do |i|
+    primes = (2..n).to_a
+    (2..Math.sqrt(n)).each do |i|
       (i..n).step(i) do |j|
-        unless tmp[j] # has the location been marked?
-          if j > i
-            tmp[j] = 'x'
-          else
-            primes << i
-          end
-        end
+        primes[j - 2] = nil if j > i
       end
     end
-
-    primes[10001]
+    primes.compact!
+    primes[10000]
   end
 end
