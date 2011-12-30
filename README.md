@@ -22,3 +22,5 @@ Benchmark a particular solution (100 iterations):
 
                     user     system      total        real
     Problem 1:  0.030000   0.000000   0.030000 (  0.023449)
+
+![Project Euler](http://projecteuler.net/profile/potenza.png "Project Euler")
